@@ -1,18 +1,26 @@
+import { css } from '@emotion/react';
+
 import { FlexBox } from 'components/Atoms';
 import NavCategory from 'components/Molecules/Navitems/NavCategory';
 
 export default function Navbar() {
   const dataList = [
-    { label: 'Roman', id: 1 },
-    { label: 'Detective', id: 2 },
-    { label: 'Essay', id: 3 },
-    { label: 'History', id: 4 },
+    { subject: 'All', id: 1 },
+    { subject: 'Romance', id: 2 },
+    { subject: 'Mystery', id: 3 },
+    { subject: 'Essay', id: 4 },
+    { subject: 'History', id: 5 },
+    { subject: 'Detective', id: 6 },
   ];
 
   return (
-    <FlexBox>
+    <FlexBox
+      justifyContent="space-between"
+      marginBottom="40px"
+      overflowX="auto"
+    >
       {dataList.map((data) => (
-        <NavCategory data={data} key={data.id} />
+        <NavCategory key={data.id} data={data} />
       ))}
     </FlexBox>
   );
