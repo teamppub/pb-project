@@ -1,9 +1,11 @@
-import { css } from '@emotion/react';
-
 import { FlexBox } from 'components/Atoms';
 import NavCategory from 'components/Molecules/Navitems/NavCategory';
 
-export default function Navbar() {
+interface changeCateProps {
+  changeCate: Function;
+}
+
+export default function Navbar(props: changeCateProps) {
   const dataList = [
     { subject: 'All', id: 1 },
     { subject: 'Romance', id: 2 },
@@ -20,7 +22,7 @@ export default function Navbar() {
       overflowX="auto"
     >
       {dataList.map((data) => (
-        <NavCategory key={data.id} data={data} />
+        <NavCategory key={data.id} data={data} changeCate={props.changeCate} />
       ))}
     </FlexBox>
   );

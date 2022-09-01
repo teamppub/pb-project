@@ -1,8 +1,7 @@
-import { useState } from 'react';
-
 import { Box } from 'components/Atoms';
 interface NavItemsProps {
   data: NavItemsInfo;
+  changeCate: Function;
 }
 
 interface NavItemsInfo {
@@ -12,9 +11,7 @@ interface NavItemsInfo {
 
 export default function NavCategory(props: NavItemsProps) {
   const data = props.data;
-
-  const [subjectState, setSubState] = useState('All');
-  console.log(subjectState);
+  const changeBookCate = props.changeCate;
 
   return (
     <>
@@ -23,7 +20,8 @@ export default function NavCategory(props: NavItemsProps) {
         fontWeight="bold"
         marginRight="20px"
         onClick={() => {
-          setSubState(data.subject);
+          changeBookCate(data.subject);
+          console.log(data.subject);
         }}
       >
         {data.subject}

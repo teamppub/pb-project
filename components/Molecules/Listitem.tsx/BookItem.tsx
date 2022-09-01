@@ -1,23 +1,43 @@
 import { Box, FlexBox, Span } from 'components/Atoms';
-import bookdata from 'components/Bookdb/data.json';
+import { data } from 'components/Organisms/List/data';
 
-export default function BookItem() {
-  const bookSubject = 'Romance';
-  const cateList = bookdata.lists.filter(
-    (subject) => subject.subject === bookSubject,
-  );
-  console.log(cateList);
+interface BookCateProps {
+  bookCate: string;
+}
 
-  return (
-    <>
-      <ul>
-        {cateList.map((list) => (
-          <li key={list.id}>
-            {list.title}
-            <Span display="block">{list.author}</Span>
-          </li>
-        ))}
-      </ul>
-    </>
+export default function BookItem(props: BookCateProps) {
+  const bookList = props.bookCate;
+  const bookData = data;
+
+  const subJect = bookData.lists.filter(
+    (subject) => subject.subject === bookList,
   );
+
+  if (bookList === 'All') {
+    return (
+      <>
+        <ul>
+          {bookData.lists.map((list) => (
+            <li key={list.id}>
+              {list.title}
+              <Span display="block">{list.author}</Span>
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <ul>
+          {subJect.map((list) => (
+            <li key={list.id}>
+              {list.title}
+              <Span display="block">{list.author}</Span>
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
 }
