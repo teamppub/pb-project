@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Box } from 'components/Atoms';
-import BookItem from 'components/Molecules/Listitem.tsx/BookItem';
+import BookList from 'components/Organisms/List/BookList';
 import { data } from 'components/Organisms/List/data';
 import Navbar from 'components/Organisms/List/Navbar';
 
@@ -15,7 +15,7 @@ export default function List() {
     <>
       <Box padding="30px">
         <Navbar changeCate={changeCate} />
-        <BookItem bookCate={bookCate} />
+        <BookList bookCate={bookCate} />
       </Box>
     </>
   );
