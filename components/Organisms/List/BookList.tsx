@@ -1,3 +1,5 @@
+import { text } from 'node:stream/consumers';
+
 import { Box, FlexBox, List, Span } from 'components/Atoms';
 import BookItem from 'components/Organisms/List/BookItem';
 import { data } from 'components/Organisms/List/data';
@@ -14,10 +16,34 @@ export default function BookList(props: BookCateProps) {
     (subject) => subject.subject === bookList,
   );
 
+  const randomIndex = () => {
+    return Math.floor(Math.random() * bookData.lists.length);
+  };
+  // const NewBookList = data.lists[randomIndex()];
+
+  // const makeNewBookList = () => {
+  //   const list = [];
+  //   for (let i = 0; i < data.lists.length; i++) {
+  //     const NewBookList = data.lists[randomIndex()];
+  //     if(list.indexOf(NewBookList) === -1){
+  //       list.push(NewBookList)
+  //     }
+  //   }
+
+  //   return NewBookData;
+  // };
+
+  // console.log(makeNewBookList());
+
+  // const NewBookData = {
+  //   ...bookData,
+  //   lists: { ...bookData.lists, lists: NewBookList },
+  // };
+
   if (bookList === '전체') {
     return (
       <ul className="ListBox">
-        {bookData.lists.map((list) => (
+        {makeNewBookList().map((list) => (
           <BookItem list={list} key={list.id} />
         ))}
       </ul>
