@@ -2,8 +2,8 @@ import { css } from '@emotion/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
+import icon from 'assets/Images/common/ico_error_01.svg';
 import { Box, Button } from 'components/Atoms';
-import icon from 'components/Images/ico_error_01.svg';
 
 export default function Error404() {
   const router = useRouter();

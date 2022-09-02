@@ -18,10 +18,12 @@ export default function NavCategory(props: NavItemsProps) {
       <Box
         fontSize="14px"
         fontWeight="bold"
-        marginRight="20px"
+        textAlign="center"
+        flex="0 0 60px"
+        lineHeight="50px"
         onClick={() => {
           changeBookCate(data.subject);
-          console.log(data.subject);
+          // console.log(data.subject);
         }}
       >
         {data.subject}

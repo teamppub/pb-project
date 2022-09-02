@@ -14,9 +14,9 @@ export default function BookList(props: BookCateProps) {
     (subject) => subject.subject === bookList,
   );
 
-  if (bookList === 'All') {
+  if (bookList === '전체') {
     return (
-      <ul>
+      <ul className="ListBox">
         {bookData.lists.map((list) => (
           <BookItem list={list} key={list.id} />
         ))}
@@ -24,7 +24,7 @@ export default function BookList(props: BookCateProps) {
     );
   } else {
     return (
-      <ul>
+      <ul className="ListBox">
         {subJect.map((list) => (
           <BookItem list={list} key={list.id} />
         ))}
