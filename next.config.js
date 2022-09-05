@@ -4,4 +4,10 @@ const nextConfig = {
   swcMinify: true,
 };
 
-module.exports = nextConfig;
+module.exports = {
+  assetPrefix:
+    process.env.NODE_ENV === 'production'
+      ? 'https://teamppub.github.io/pb-project'
+      : '',
+};
+// module.exports = nextConfig;
