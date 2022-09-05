@@ -1,4 +1,4 @@
-import { text } from 'node:stream/consumers';
+import { useEffect, useState } from 'react';
 
 import { Box, FlexBox, List, Span } from 'components/Atoms';
 import BookItem from 'components/Organisms/List/BookItem';
@@ -10,40 +10,49 @@ interface BookCateProps {
 
 export default function BookList(props: BookCateProps) {
   const bookList = props.bookCate;
-  const bookData = data;
+  const [bookData, setNewBookData] = useState(data);
 
   const subJect = bookData.lists.filter(
     (subject) => subject.subject === bookList,
   );
 
+  // 랜덤 인덱스
   const randomIndex = () => {
     return Math.floor(Math.random() * bookData.lists.length);
   };
-  // const NewBookList = data.lists[randomIndex()];
 
-  // const makeNewBookList = () => {
-  //   const list = [];
-  //   for (let i = 0; i < data.lists.length; i++) {
-  //     const NewBookList = data.lists[randomIndex()];
-  //     if(list.indexOf(NewBookList) === -1){
-  //       list.push(NewBookList)
-  //     }
-  //   }
+  const makeNewBookList = () => {
+    const list = [];
+    // for (let i = 0; i < bookData.lists.length; i++) {
+    //   const NewBookList = bookData.lists[randomIndex()];
+    //   if (list.indexOf(NewBookList) === -1) {
+    //     console.log(list);
+    //     list.push(NewBookList);
+    //   }
+    // }
 
-  //   return NewBookData;
-  // };
+    //   while (list.length !== 28) {
+    //     const NewBookList = bookData.lists[randomIndex()];
+    //     if (list.indexOf(NewBookList) === -1) {
+    //       console.log(list);
+    //       list.push(NewBookList);
+    //     }
+    //   }
+    //   return list;
+  };
 
-  // console.log(makeNewBookList());
+  console.log(makeNewBookList());
 
-  // const NewBookData = {
-  //   ...bookData,
-  //   lists: { ...bookData.lists, lists: NewBookList },
-  // };
+  useEffect(() => {
+    // const list = [];
+    // list.push(makeNewBookList());
+    // setNewBookData();
+  }, []);
 
   if (bookList === '전체') {
     return (
       <ul className="ListBox">
-        {makeNewBookList().map((list) => (
+        {bookData.lists.map((list) => (
           <BookItem list={list} key={list.id} />
         ))}
       </ul>
