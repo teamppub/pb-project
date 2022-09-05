@@ -21,7 +21,7 @@ export default function Navbar(props: changeCateProps) {
       overflowX="auto"
       borderBottom="1px solid #f3f3f3"
       marginRight="10px"
-      position="fixed"
+      position="sticky"
       top="0px"
       left="0px"
       right="0px"

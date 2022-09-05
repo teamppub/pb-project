@@ -12,7 +12,7 @@ export default function List() {
 
   return (
     <>
-      <Box position="relative" paddingTop="80px">
+      <Box position="relative">
         <Navbar changeCate={changeCate} />
         <BookList bookCate={bookCate} />
       </Box>
