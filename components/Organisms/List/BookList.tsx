@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import BookItem from 'components/Organisms/List/BookItem';
 import { data } from 'components/Organisms/List/data';
@@ -8,31 +8,31 @@ interface BookCateProps {
   bookCate: string;
 }
 
+// random 리스트
+const Random = () => {
+  return Math.random() - 0.5;
+};
+
+const Randomed = [...data.lists].sort(Random);
+
 export default function BookList(props: BookCateProps) {
   const bookList = props.bookCate;
-  const bookData = data;
-  const [NewData, setNewBookData] = useState(data);
+  const [NewData, setNewBookData] = useState(data.lists);
+  const RandomListRef = useRef(Randomed);
 
-  const subJect = bookData.lists.filter(
-    (subject) => subject.subject === bookList,
-  );
+  const subJect = data.lists.filter((subject) => subject.subject === bookList);
 
-  // const makeRandomList = () => {
-  //   return bookData.lists.sort(() => Math.random() - 0.5);
-  // };
-
-  // 렌더링 될 때마다 실행됨
   useEffect(() => {
     const makeRandomList = () => {
-      return bookData.lists.sort(() => Math.random() - 0.5);
+      return RandomListRef.current;
     };
-    setNewBookData(makeRandomList, []);
-  }, []);
+    setNewBookData(makeRandomList);
+  }, [bookList]);
 
   if (bookList === '전체') {
     return (
       <ul className="ListBox">
-        {bookData.lists.map((list) => (
+        {NewData.map((list) => (
           <BookItem list={list} key={list.id} />
         ))}
       </ul>
