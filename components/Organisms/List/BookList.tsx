@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import BookItem from 'components/Organisms/List/BookItem';
 import { data } from 'components/Organisms/List/data';

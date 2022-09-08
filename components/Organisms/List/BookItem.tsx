@@ -1,4 +1,4 @@
-import { List, Span, Box, Button } from 'components/Atoms';
+import { List, Box } from 'components/Atoms';
 import ImageItem from 'components/Molecules/ImgLists/ImageItem';
 
 import { useRouter } from 'next/router';
