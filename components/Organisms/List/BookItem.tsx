@@ -1,7 +1,7 @@
+import { useRouter } from 'next/router';
+
 import { List, Box } from 'components/Atoms';
 import ImageItem from 'components/Molecules/ImgLists/ImageItem';
-
-import { useRouter } from 'next/router';
 
 interface list {
   list: listProps;

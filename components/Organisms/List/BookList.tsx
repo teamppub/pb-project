@@ -10,7 +10,6 @@ interface BookCateProps {
 export default function BookList(props: BookCateProps) {
   const bookList = props.bookCate;
   const [NewData, setNewBookData] = useState(data.lists);
-
   const Randomed = [...data.lists].sort(() => {
     return Math.random() - 0.5;
   });
@@ -18,10 +17,7 @@ export default function BookList(props: BookCateProps) {
   const subJect = data.lists.filter((subject) => subject.subject === bookList);
 
   useEffect(() => {
-    const makeRandomList = () => {
-      return Randomed;
-    };
-    setNewBookData(makeRandomList);
+    setNewBookData(Randomed);
   }, []);
 
   if (bookList === '전체') {
