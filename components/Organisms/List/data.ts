@@ -5,6 +5,7 @@ export const data = {
       title: '불편한 편의점',
       subject: '소설',
       author: '김호연',
+      value: 'Novel',
       url: 'img_novel01.jpg',
     },
     {
@@ -12,6 +13,7 @@ export const data = {
       title: '달러구트 꿈 백화점',
       subject: '소설',
       author: '이미예',
+      value: 'Novel',
       url: 'img_novel02.jpg',
     },
     {
@@ -19,6 +21,7 @@ export const data = {
       title: '지구 끝의 온실',
       subject: '소설',
       author: '김초엽',
+      value: 'Novel',
       url: 'img_novel03.jpg',
     },
     {
@@ -26,6 +29,7 @@ export const data = {
       title: '미드나잇 라이브러리',
       subject: '소설',
       author: '매트 헤이그',
+      value: 'Novel',
       url: 'img_novel04.jpg',
     },
     {
@@ -33,6 +37,7 @@ export const data = {
       title: '테라피스트',
       subject: '소설',
       author: 'B. A. 패리스',
+      value: 'Novel',
       url: 'img_novel05.jpg',
     },
     {
@@ -40,6 +45,7 @@ export const data = {
       title: '가재가 노래하는 곳',
       subject: '소설',
       author: '델리아 오언스',
+      value: 'Novel',
       url: 'img_novel06.jpg',
     },
     {
@@ -47,6 +53,7 @@ export const data = {
       title: '우리의 아픔엔 서사가 있다',
       subject: '인문',
       author: '아사 클라인먼',
+      value: 'Humanities',
       url: 'img_hum01.jpg',
     },
     {
@@ -54,6 +61,7 @@ export const data = {
       title: '공간의 미래',
       subject: '인문',
       author: '유현준',
+      value: 'Humanities',
       url: 'img_hum02.jpg',
     },
     {
@@ -61,6 +69,7 @@ export const data = {
       title: '눈물 한 방울',
       subject: '인문',
       author: '이어령',
+      value: 'Humanities',
       url: 'img_hum03.jpg',
     },
     {
@@ -68,6 +77,7 @@ export const data = {
       title: '금요일엔 시골집으로 퇴근합니다',
       subject: '에세이',
       author: '김미리',
+      value: 'Essay',
       url: 'img_essay01.jpg',
     },
     {
@@ -75,6 +85,7 @@ export const data = {
       title: '언어의 온도',
       subject: '에세이',
       author: '이기주',
+      value: 'Essay',
       url: 'img_essay02.jpg',
     },
     {
@@ -82,6 +93,7 @@ export const data = {
       title: '모래알만 한 진실이라도',
       subject: '에세이',
       author: '윤슬',
+      value: 'Essay',
       url: 'img_essay03.jpg',
     },
     {
@@ -89,6 +101,7 @@ export const data = {
       title: '죽고 싶지만 떡볶이는 먹고 싶어',
       subject: '에세이',
       author: '백세희',
+      value: 'Essay',
       url: 'img_essay04.jpg',
     },
     {
@@ -96,6 +109,7 @@ export const data = {
       title: '총 균 쇠',
       subject: '역사',
       author: '제레드 다이아몬드',
+      value: 'History',
       url: 'img_history01.jpg',
     },
     {
@@ -103,6 +117,7 @@ export const data = {
       title: '인류학의 역사와 이론',
       subject: '역사',
       author: '앨런 바너드',
+      value: 'History',
       url: 'img_history02.jpg',
     },
     {
@@ -110,6 +125,7 @@ export const data = {
       title: '메트로 폴리스',
       subject: '역사',
       author: '벤 윌슨',
+      value: 'History',
       url: 'img_history03.jpg',
     },
     {
@@ -117,6 +133,7 @@ export const data = {
       title: '물고기는 존재하지 않는다',
       subject: '논픽션',
       author: '룰루 밀러',
+      value: 'Nonfiction',
       url: 'img_nonfiction01.jpg',
     },
     {
@@ -124,6 +141,7 @@ export const data = {
       title: '아무도 미워하지 않는 개의 죽음',
       subject: '논픽션',
       author: '하재영',
+      value: 'Nonfiction',
       url: 'img_nonfiction02.jpg',
     },
     {
@@ -131,6 +149,7 @@ export const data = {
       title: '선창은 언제나 나의 몫이었다',
       subject: '논픽션',
       author: '양경인',
+      value: 'Nonfiction',
       url: 'img_nonfiction03.jpg',
     },
     {
@@ -138,6 +157,7 @@ export const data = {
       title: '퓰리처 글쓰기 수업',
       subject: '논픽션',
       author: '잭 하트',
+      value: 'Nonfiction',
       url: 'img_nonfiction04.jpg',
     },
     {
@@ -145,6 +165,7 @@ export const data = {
       title: '세월의 거품',
       subject: '소설',
       author: '보리스 비앙',
+      value: 'Novel',
       url: 'img_novel07.jpg',
     },
     {
@@ -152,6 +173,7 @@ export const data = {
       title: '박상미의 가족 상담소',
       subject: '자기계발',
       author: '박상미',
+      value: 'Self-development',
       url: 'img_develop01.jpg',
     },
     {
@@ -159,6 +181,7 @@ export const data = {
       title: '기분이 태도가 되지 않게',
       subject: '자기계발',
       author: '레몬심리',
+      value: 'Self-development',
       url: 'img_develop02.jpg',
     },
     {
@@ -166,6 +189,7 @@ export const data = {
       title: '나의 하루는 4시 30분에 시작된다',
       subject: '자기계발',
       author: '김유진',
+      value: 'Self-development',
       url: 'img_develop03.jpg',
     },
     {
@@ -173,6 +197,7 @@ export const data = {
       title: '마음챙김이 일상이 되면 달라지는 것들',
       subject: '자기계발',
       author: '캐럴라인 웰치',
+      value: 'Self-development',
       url: 'img_develop04.jpg',
     },
     {
@@ -180,6 +205,7 @@ export const data = {
       title: '부자의 독서법',
       subject: '자기계발',
       author: '송숙희',
+      value: 'Self-development',
       url: 'img_develop05.jpg',
     },
     {
@@ -187,6 +213,7 @@ export const data = {
       title: '이토록 멋진 오십이라면',
       subject: '자기계발',
       author: '이주희',
+      value: 'Self-development',
       url: 'img_develop06.jpg',
     },
     {
@@ -194,6 +221,7 @@ export const data = {
       title: '어느 날, 죽음에 네가 들어왔다',
       subject: '소설',
       author: '세이카 료켄',
+      value: 'Novel',
       url: 'img_novel08.jpg',
     },
   ],
