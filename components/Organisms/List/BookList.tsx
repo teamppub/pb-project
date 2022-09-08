@@ -9,16 +9,25 @@ interface BookCateProps {
 
 export default function BookList(props: BookCateProps) {
   const bookList = props.bookCate;
-  const [bookData, setNewBookData] = useState(data);
+  const [NewData, setNewBookData] = useState(data.lists);
 
-  const subJect = bookData.lists.filter(
-    (subject) => subject.subject === bookList,
-  );
+  const Randomed = [...data.lists].sort(() => {
+    return Math.random() - 0.5;
+  });
+
+  const subJect = data.lists.filter((subject) => subject.subject === bookList);
+
+  useEffect(() => {
+    const makeRandomList = () => {
+      return Randomed;
+    };
+    setNewBookData(makeRandomList);
+  }, []);
 
   if (bookList === '전체') {
     return (
       <ul className="ListBox">
-        {bookData.lists.map((list) => (
+        {NewData.map((list) => (
           <BookItem list={list} key={list.id} />
         ))}
       </ul>
