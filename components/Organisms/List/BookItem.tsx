@@ -1,8 +1,7 @@
-import { List, Box } from 'components/Atoms';
-import ImageItem from 'components/Molecules/ImgLists/ImageItem';
-
 import { useRouter } from 'next/router';
 
+import { List, Box } from 'components/Atoms';
+import ImageItem from 'components/Molecules/ImgLists/ImageItem';
 interface list {
   list: listProps;
 }
@@ -21,7 +20,7 @@ export default function BookItem(props: list) {
   const list = props.list;
   return (
     <List flex="0 0 50%" marginBottom="20px" padding="0px 10px" key={list.id}>
-      <Box onClick={() => router.push('/lists')}>
+      <Box onClick={() => router.push('')}>
         <ImageItem url={list.url} />
       </Box>
       <Box display="block" fontSize="12px" fontWeight="500" lineHeight="18px">
