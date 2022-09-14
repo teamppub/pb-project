@@ -11,6 +11,7 @@ interface BottomItemsProps {
 }
 
 function BottomNavItem({ data }: { data: BottomItemsProps }) {
+  const prefix = process.env.NODE_ENV === 'production' ? '/pb-project' : '';
   const router = useRouter();
   /*
     DESC :: 
@@ -28,7 +29,7 @@ function BottomNavItem({ data }: { data: BottomItemsProps }) {
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      onClick={() => router.push(data.path?.[0] ?? '')}
+      onClick={() => router.push(`${prefix}${data.path?.[0]}` ?? '')}
     >
       <Box marginBottom="2px">{isSelected ? data.selectedIcon : data.icon}</Box>
       <Box fontSize="9px">{data.pathName}</Box>
