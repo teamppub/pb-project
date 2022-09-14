@@ -2,6 +2,7 @@ const theme = {
   colors: {
     white: '#FFF',
     black: '#000',
+    red: '#F00',
   },
 };
 
