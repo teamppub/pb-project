@@ -10,7 +10,6 @@ import CommonHeader from 'components/Organisms/Common/CommonHeader';
 import theme from 'styles/theme';
 
 export default function Container({ children }: { children: ReactNode }) {
-  const prefix = process.env.NODE_ENV === 'production' ? '/pb-project' : '';
   return (
     <Box>
       <CommonHeader />
@@ -21,19 +20,19 @@ export default function Container({ children }: { children: ReactNode }) {
             selectedIcon: <NavList fill={theme.colors.black} />,
             icon: <NavList />,
             pathName: 'LIST',
-            path: [`${prefix}/list`],
+            path: ['/list'],
           },
           {
             selectedIcon: <NavHome fill={theme.colors.black} />,
             icon: <NavHome />,
             pathName: 'HOME',
-            path: [`${prefix}/`],
+            path: ['/'],
           },
           {
             selectedIcon: <NavMyPage fill={theme.colors.black} />,
             icon: <NavMyPage />,
             pathName: 'MY',
-            path: [`${prefix}/mypage`],
+            path: ['/mypage'],
           },
         ]}
       />
