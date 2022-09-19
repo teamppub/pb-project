@@ -3,6 +3,10 @@ const theme = {
     white: '#FFF',
     black: '#000',
     red: '#F00',
+    brown: '#a08679',
+    gray99: '#999999',
+    grayEE: '#eeeeee',
+    gray66: '#666666',
   },
 };
 

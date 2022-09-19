@@ -12,12 +12,12 @@ export default function TopBookImage({ bookImage }: BookDetailImageProps) {
       ? 'https://teamppub.github.io/pb-project'
       : '';
   return (
-    <Box marginBottom="10px" boxShadow="0px 0px 30px rgb(0 0 0 / 10%);">
+    <Box position="relative" width="100%" height="100%">
       <Image
         src={`${prefix}/images/lists/${bookImage}`}
         alt="image"
-        width={120}
-        height={160}
+        width="375"
+        height="500"
         layout="responsive"
       />
     </Box>

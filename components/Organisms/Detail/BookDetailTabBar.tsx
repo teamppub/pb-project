@@ -17,8 +17,15 @@ export default function BookDetailTabBar({
       {tabList.map(({ label, value }, index) => (
         <Box
           key={index}
+          flex="0 0 50%"
+          height="26px"
+          textAlign="center"
+          fontSize="16px"
+          lineHeight="26px"
           color={
-            tabState === value ? `${theme.colors.red}` : `${theme.colors.black}`
+            tabState === value
+              ? `${theme.colors.brown}`
+              : `${theme.colors.black}`
           }
           onClick={() => {
             changeTab(value);
