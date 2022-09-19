@@ -18,10 +18,7 @@ export default function BookList(props: BookCateProps) {
   const subJect = data.lists.filter((subject) => subject.subject === bookList);
 
   useEffect(() => {
-    const makeRandomList = () => {
-      return Randomed;
-    };
-    setNewBookData(makeRandomList);
+    setNewBookData(Randomed);
   }, []);
 
   if (bookList === '전체') {

@@ -3,6 +3,7 @@ import NavCategory from 'components/Molecules/Navitems/NavCategory';
 
 interface changeCateProps {
   changeCate: Function;
+  bookCate: string;
 }
 
 export default function Navbar(props: changeCateProps) {
@@ -29,7 +30,12 @@ export default function Navbar(props: changeCateProps) {
       zIndex="10"
     >
       {dataList.map((data) => (
-        <NavCategory key={data.id} data={data} changeCate={props.changeCate} />
+        <NavCategory
+          key={data.id}
+          data={data}
+          changeCate={props.changeCate}
+          bookCate={props.bookCate}
+        />
       ))}
     </FlexBox>
   );
