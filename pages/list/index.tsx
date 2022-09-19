@@ -13,7 +13,7 @@ export default function List() {
   return (
     <>
       <Box position="relative">
-        <Navbar changeCate={changeCate} />
+        <Navbar changeCate={changeCate} bookCate={bookCate} />
         <BookList bookCate={bookCate} />
       </Box>
     </>
