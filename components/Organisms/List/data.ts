@@ -92,7 +92,7 @@ export const data = {
       id: 12,
       title: '모래알만 한 진실이라도',
       subject: '에세이',
-      author: '윤슬',
+      author: '박완서',
       value: 'Essay',
       url: 'img_essay03.jpg',
     },
