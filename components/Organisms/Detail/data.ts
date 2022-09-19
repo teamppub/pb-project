@@ -7,7 +7,7 @@ export const bookDetailData = [
     aboutBook: {
       summary:
         '원 플러스 원의 기쁨, 삼각김밥 모양의 슬픔,<br/> 만 원에 네 번의 폭소가 터지는 곳!<br/>힘겨운 시대를 살아가는 우리들에게 다가온 조금 특별한 편의점 이야기',
-      photo: ['img_detail_novel01.jpg'],
+      photo: 'img_detail_novel01.jpg',
     },
     aboutAuthor: {
       image: 'img_author_novel01.jpg',
