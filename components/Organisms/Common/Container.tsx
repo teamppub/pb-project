@@ -31,8 +31,8 @@ export default function Container({ children }: { children: ReactNode }) {
           {
             selectedIcon: <NavMyPage fill={theme.colors.black} />,
             icon: <NavMyPage />,
-            pathName: 'MY',
-            path: ['/mypage'],
+            pathName: 'SEARCH',
+            path: ['/search'],
           },
         ]}
       />
