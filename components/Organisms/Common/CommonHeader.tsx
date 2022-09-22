@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useRef } from 'react';
-import { useSetRecoilState } from 'recoil';
 
 import iconBack from 'assets/Images/common/ico_back.svg';
 import { Box } from 'components/Atoms';
@@ -17,7 +16,6 @@ export default function CommonHeader() {
         <Box
           paddingLeft="15px"
           onClick={() => {
-            setReRender(true);
             router.back();
           }}
         >
