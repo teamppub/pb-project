@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useRef } from 'react';
 
 import iconBack from 'assets/Images/common/ico_back.svg';
 import { Box } from 'components/Atoms';
@@ -11,7 +10,12 @@ export default function CommonHeader() {
   return (
     <>
       <Box position="relative" background={theme.colors.white} height="45px">
-        <Box paddingLeft="15px" onClick={() => router.back()}>
+        <Box
+          paddingLeft="15px"
+          onClick={() => {
+            router.back();
+          }}
+        >
           <Image
             src={iconBack}
             width="25"

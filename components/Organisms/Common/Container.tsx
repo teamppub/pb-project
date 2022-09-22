@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import NavHome from 'assets/common/bottomNavigator/NavHome';
 import NavList from 'assets/common/bottomNavigator/NavList';
-import NavMyPage from 'assets/common/bottomNavigator/NavMyPage';
+import NavSearch from 'assets/common/bottomNavigator/NavSearch';
 import NavWish from 'assets/common/bottomNavigator/NavWish';
 import { Box } from 'components/Atoms';
 import BottomNavigator from 'components/Organisms/Common/BottomNavigator';
@@ -29,10 +29,10 @@ export default function Container({ children }: { children: ReactNode }) {
             path: ['/'],
           },
           {
-            selectedIcon: <NavMyPage fill={theme.colors.black} />,
-            icon: <NavMyPage />,
-            pathName: 'MY',
-            path: ['/mypage'],
+            selectedIcon: <NavSearch fill={theme.colors.black} />,
+            icon: <NavSearch />,
+            pathName: 'SEARCH',
+            path: ['/search'],
           },
         ]}
       />
