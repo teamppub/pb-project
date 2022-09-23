@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useRecoilValue } from 'recoil';
 
 import BookItem from 'components/Organisms/List/BookItem';
 import { data } from 'components/Organisms/List/data';
-import { render } from 'states/render';
 
 interface BookCateProps {
   bookCate: string;
@@ -11,8 +9,7 @@ interface BookCateProps {
 
 export default function BookList(props: BookCateProps) {
   const bookList = props.bookCate;
-  const [NewData, setNewBookData] = useState(data.lists);
-
+  const [newData, setNewBookData] = useState(data.lists);
 
   const randomed = [...data.lists].sort(() => {
     return Math.random() - 0.5;
@@ -21,7 +18,7 @@ export default function BookList(props: BookCateProps) {
   const subJect = data.lists.filter((subject) => subject.subject === bookList);
 
   useEffect(() => {
-      setNewBookData(Randomed);
+    setNewBookData(randomed);
   }, []);
 
   if (bookList === '전체') {
