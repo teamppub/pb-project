@@ -22,7 +22,7 @@ export default function SearchList(props: dataInfo) {
         borderBottom="1px solid #dddddd"
         onClick={() => router.push(`${prefix}/detail/${bookId}`)}
       >
-        {bookTitle}
+        <Box>{bookTitle}</Box>
       </Box>
     </>
   );

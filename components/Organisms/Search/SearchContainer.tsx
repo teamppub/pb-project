@@ -1,9 +1,10 @@
 import { css } from '@emotion/react';
+import Image from 'next/image';
 import { useState } from 'react';
 
-import { Box } from 'components/Atoms';
+import iconClose from 'assets/Images/common/ico_close.svg';
+import { Box, Button } from 'components/Atoms';
 import { data } from 'components/Organisms/List/data';
-import { fetchData } from 'components/Organisms/Search/fetchData';
 import SearchList from 'components/Organisms/Search/SearchList';
 
 export default function SearchBox() {
@@ -14,7 +15,18 @@ export default function SearchBox() {
     setCurrentInput(e.target.value);
   };
 
-  fetchData();
+  // 내가 검색한 글자와 책 타이틀과 일치하는 항목만 가져오기
+  const filteredTitle = bookDataList.filter((bookdata) => {
+    return bookdata.title
+      .replace(' ', '')
+      .toLocaleLowerCase()
+      .includes(currentInput.toLocaleLowerCase());
+  });
+
+  // 검색창에 입력된 값과 타이틀 명을 비교해서 맞는 것만 리스트로 나타내기
+  const onClickHandler = () => {
+    setCurrentInput('');
+  };
 
   return (
     <>
@@ -35,11 +47,25 @@ export default function SearchBox() {
             width: 100%;
           `}
         />
+        <Button
+          onClick={onClickHandler}
+          position="absolute"
+          right="40px"
+          lineHeight="40px"
+        >
+          <Image
+            src={iconClose}
+            width="20"
+            height="40"
+            alt="close"
+            layout="fixed"
+          />
+        </Button>
       </Box>
       <Box>
-        {/* {filteredTitle.map((data) => (
+        {filteredTitle.map((data) => (
           <SearchList title={data.title} key={data.id} id={data.id} />
-        ))} */}
+        ))}
       </Box>
     </>
   );
