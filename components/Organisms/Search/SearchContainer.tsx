@@ -11,20 +11,20 @@ export default function SearchBox() {
   const bookDataList = data.lists;
   const [currentInput, setCurrentInput] = useState(''); //현재 검색창에 있는 input
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e: string | any) => {
     setCurrentInput(e.target.value);
   };
 
   // 내가 검색한 글자와 책 타이틀과 일치하는 항목만 가져오기
-  const filteredTitle = bookDataList.filter((bookdata) => {
-    return bookdata.title
-      .replace(' ', '')
-      .toLocaleLowerCase()
-      .includes(currentInput.toLocaleLowerCase());
+  const filteredTitle = bookDataList.filter(({ title, author }) => {
+    return (
+      title.includes(currentInput.toLocaleLowerCase()) ||
+      author.includes(currentInput.toLocaleLowerCase())
+    );
   });
 
   // 검색창에 입력된 값과 타이틀 명을 비교해서 맞는 것만 리스트로 나타내기
-  const onClickHandler = () => {
+  const onClickDelete = () => {
     setCurrentInput('');
   };
 
@@ -48,7 +48,7 @@ export default function SearchBox() {
           `}
         />
         <Button
-          onClick={onClickHandler}
+          onClick={onClickDelete}
           position="absolute"
           right="40px"
           lineHeight="40px"
