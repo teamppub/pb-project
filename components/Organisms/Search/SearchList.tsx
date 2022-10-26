@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import { List, Box } from 'components/Atoms';
+import { Box } from 'components/Atoms';
 
 interface dataInfo {
   title: string;

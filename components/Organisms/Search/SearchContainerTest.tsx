@@ -23,7 +23,6 @@ interface bookDataInfo {
 export default function SearchBox(props: bookData) {
   const [currentInput, setCurrentInput] = useState(''); //현재 검색창에 있는 input
   const [lists, setLists] = useState([]); //필터된 리스트
-  const bookDataLists = props.bookData;
 
   const handleInputChange = (e: any) => {
     setCurrentInput(e.target.value);
@@ -31,22 +30,22 @@ export default function SearchBox(props: bookData) {
 
   useEffect(() => {
     axios
-      .get('https://my-json-server.typicode.com/teamppub/lists/db')
+      .get('/list/data.json')
       .then((res) => {
         setLists(res.data.lists);
       })
       .catch(console.error);
   }, []);
 
+  //   console.log(lists);
+
   // 내가 검색한 글자와 책 타이틀과 일치하는 항목만 가져오기
-  const filteredTitle = lists.filter(
-    ({ title, author }: typeof bookDataLists) => {
-      return (
-        title.includes(currentInput.toLocaleLowerCase()) ||
-        author.includes(currentInput.toLocaleLowerCase())
-      );
-    },
-  );
+  const filteredTitle = lists.filter((data) => {
+    return (
+      data.title.includes(currentInput.toLocaleLowerCase()) ||
+      data.author.includes(currentInput.toLocaleLowerCase())
+    );
+  });
 
   // 검색창에 입력된 값과 타이틀 명을 비교해서 맞는 것만 리스트로 나타내기
   const onClickHandler = () => {
@@ -88,8 +87,8 @@ export default function SearchBox(props: bookData) {
         </Button>
       </Box>
       <Box>
-        {filteredTitle.map(({ title, id }: typeof bookDataLists) => (
-          <SearchList title={title} key={id} id={id} />
+        {filteredTitle.map((data) => (
+          <SearchList title={data.title} key={data.id} id={data.id} />
         ))}
       </Box>
     </>
