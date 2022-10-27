@@ -7,10 +7,6 @@ import iconClose from 'assets/Images/common/ico_close.svg';
 import { Box, Button } from 'components/Atoms';
 import SearchList from 'components/Organisms/Search/SearchList';
 
-interface bookData {
-  bookData: bookDataInfo;
-}
-
 interface bookDataInfo {
   id: number;
   title: string;
@@ -20,10 +16,10 @@ interface bookDataInfo {
   url: string | null;
 }
 
-export default function SearchBox(props: bookData) {
+export default function SearchBox() {
   const [currentInput, setCurrentInput] = useState(''); //현재 검색창에 있는 input
   const [lists, setLists] = useState([]); //필터된 리스트
-  const bookDataLists = props.bookData;
+  // const bookDataLists = props.bookData;
 
   const handleInputChange = (e: any) => {
     setCurrentInput(e.target.value);
@@ -39,14 +35,12 @@ export default function SearchBox(props: bookData) {
   }, []);
 
   // 내가 검색한 글자와 책 타이틀과 일치하는 항목만 가져오기
-  const filteredTitle = lists.filter(
-    ({ title, author }: typeof bookDataLists) => {
-      return (
-        title.includes(currentInput.toLocaleLowerCase()) ||
-        author.includes(currentInput.toLocaleLowerCase())
-      );
-    },
-  );
+  const filteredTitle = lists.filter(({ title, author }: bookDataInfo) => {
+    return (
+      title.includes(currentInput.toLocaleLowerCase()) ||
+      author.includes(currentInput.toLocaleLowerCase())
+    );
+  });
 
   // 검색창에 입력된 값과 타이틀 명을 비교해서 맞는 것만 리스트로 나타내기
   const onClickHandler = () => {
@@ -87,11 +81,15 @@ export default function SearchBox(props: bookData) {
           />
         </Button>
       </Box>
-      <Box>
-        {filteredTitle.map(({ title, id }: typeof bookDataLists) => (
-          <SearchList title={title} key={id} id={id} />
-        ))}
-      </Box>
+      {currentInput !== '' ? (
+        <Box>
+          {filteredTitle.map(({ title, id }) => (
+            <SearchList title={title} key={id} id={id} />
+          ))}
+        </Box>
+      ) : (
+        ''
+      )}
     </>
   );
 }
