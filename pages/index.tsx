@@ -1,12 +1,13 @@
 import type { NextPage } from 'next';
 
 import { Box, Layout } from 'components/Atoms';
+import MainContainer from 'components/Organisms/Main/MainContainer';
 
 const Home: NextPage = () => {
   return (
     <>
       <Layout>
-        <Box>테스트</Box>
+        <MainContainer />
       </Layout>
     </>
   );
