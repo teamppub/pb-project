@@ -25,13 +25,27 @@ export default function SearchBox() {
     setCurrentInput(e.target.value);
   };
 
+  // useEffect(() => {
+  //   axios
+  //     .get('https://my-json-server.typicode.com/teamppub/lists/db')
+  //     .then((res) => {
+  //       setLists(res.data.lists);
+  //     })
+  //     .catch(console.error);
+  // }, []);
+
   useEffect(() => {
-    axios
-      .get('https://my-json-server.typicode.com/teamppub/lists/db')
-      .then((res) => {
+    const getLists = async () => {
+      try {
+        const res = await axios.get(
+          'https://my-json-server.typicode.com/teamppub/lists/db',
+        );
         setLists(res.data.lists);
-      })
-      .catch(console.error);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getLists();
   }, []);
 
   // 내가 검색한 글자와 책 타이틀과 일치하는 항목만 가져오기
