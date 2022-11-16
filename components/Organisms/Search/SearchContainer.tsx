@@ -34,6 +34,7 @@ export default function SearchBox() {
   //     .catch(console.error);
   // }, []);
 
+  // 추가
   useEffect(() => {
     const getLists = async () => {
       try {
