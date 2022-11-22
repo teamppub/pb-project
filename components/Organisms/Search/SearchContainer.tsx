@@ -34,7 +34,6 @@ export default function SearchBox() {
   //     .catch(console.error);
   // }, []);
 
-  // 추가
   useEffect(() => {
     const getLists = async () => {
       try {
@@ -42,6 +41,7 @@ export default function SearchBox() {
           'https://my-json-server.typicode.com/teamppub/lists/db',
         );
         setLists(res.data.lists);
+        console.log(res.data.lists);
       } catch (error) {
         console.log(error);
       }
